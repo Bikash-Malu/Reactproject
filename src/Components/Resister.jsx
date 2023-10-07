@@ -106,7 +106,7 @@ export default function Resister() {
   
                     <div className="form-outline datepicker w-100">
                     <label for="birthdayDate" className="form-label">Date of Birth</label>
-                      <input type="text" value={user.dob} className="form-control form-control-lg" id="birthdayDate" onChange={getuser} name='dob' />
+                      <input type='date' value={user.dob} className="form-control form-control-lg" id="birthdayDate" onChange={getuser} name='dob' />
                      
                     </div>
   

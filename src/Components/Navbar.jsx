@@ -12,7 +12,7 @@ export default function Navbar() {
                 <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/service">Services</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/contact">Register</Link></li>
+                <li className="nav-item"><Link className="nav-link" to="/contact">Login</Link></li>
             </ul>
         </div>
     </div>
