@@ -8,10 +8,10 @@ export default function Resister() {
         name:"",
         lname:"",
         dob:"",
-        gender:"",
+       
         email:"",
         phone:"",
-        subject:"",
+        
     });
     let name,value;
     const getuser=(e)=>{
@@ -23,8 +23,8 @@ export default function Resister() {
     const post1=async(e1)=>
     {
       e1.preventDefault();
-      const{id,name,lname,dob,gender,email,phone,subject}=user;
-      if(id && name && lname && dob && email && phone && subject && gender)
+      const{id,name,lname,dob,email,phone}=user;
+      if(id && name && lname && dob && email && phone)
       {
         const res=await fetch("https://react-a82be-default-rtdb.firebaseio.com/muna.json",{
           method:"POST",
@@ -36,10 +36,9 @@ export default function Resister() {
             name,
             lname,
             dob,
-            gender,
             email,
             phone,
-            subject,
+           
           }),
          }
          );
@@ -49,10 +48,10 @@ export default function Resister() {
             name:"",
             lname:"",
             dob:"",
-            gender:"",
+          
             email:"",
             phone:"",
-            subject:"",
+            
         });
         Swal.fire({
           position:'center',
@@ -112,27 +111,14 @@ export default function Resister() {
                     </div>
   
                   </div>
-                  <div className="col-md-6 mb-4">
-  
-                    <h6 className="mb-2 pb-1">Gender: </h6>
-  
-                    <div className="form-check form-check-inline">
-                      <input className="form-check-input" name='gender' type="radio" id="femaleGender"
-                       checked onChange={getuser} value={user.gender}/>
-                      <label className="form-check-label" for="femaleGender" value="female" >Female</label>
+                  <div className="col-md-6 mb-4 pb-2">
+                  <label className="form-label" for="phoneNumber">Phone Number</label>
+                    <div className="form-outline">
+                   
+                      <input type="text" value={user.phone} id="phoneNumber" className="form-control form-control-lg" onChange={getuser}name='phone' />
+                     
                     </div>
   
-                    <div className="form-check form-check-inline">
-                      <input className="form-check-input"  name='gender'  type="radio" id="maleGender" 
-                      onChange={getuser} />
-                      <label className="form-check-label" for="maleGender" value="male">Male</label>
-                    </div>
-  
-                    <div className="form-check form-check-inline">
-                      <input className="form-check-input"  name='gender' type="radio" id="otherGender"
-                       onChange={getuser} />
-                      <label className="form-check-label" for="otherGender" value="other">Other</label>
-                    </div>
                   </div>
                 </div>
   
@@ -146,33 +132,13 @@ export default function Resister() {
                     </div>
   
                   </div>
-                  <div className="col-md-6 mb-4 pb-2">
-                  <label className="form-label" for="phoneNumber">Phone Number</label>
-                    <div className="form-outline">
-                   
-                      <input type="text" value={user.phone} id="phoneNumber" className="form-control form-control-lg" onChange={getuser}name='phone' />
-                     
-                    </div>
-  
-                  </div>
+                  
                 </div>
   
-                <div className="row">
-                  <div className="col-12">
-                  <label className="form-label" for="phoneNumber">Select your Subject</label>
-                    <select className="select form-control-lg" name='subject' value={user.subject} onChange={getuser}>
-                      
-                      <option>Math</option>
-                      <option>Science</option>
-                      <option>English</option>
-                    </select>
-                    <label className="form-label select-label">Choose option</label>
-  
-                  </div>
-                </div>
+               
   
                 <div className="mt-4 pt-2">
-                 <button onClick={post1} type='submit'>Submit</button>
+                 <button onClick={post1} type='submit' className='btn btn-outline-warning text-center'>Submit</button>
                 </div>
               </form>
             </div>
